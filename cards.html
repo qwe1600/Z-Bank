@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карты - Z-Bank</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Z-Bank</div>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="cards.html">Карты</a>
+            <a href="credits.html">Кредиты</a>
+            <a href="investments.html">Инвестиции</a>
+            <a href="contacts.html">Контакты</a>
+            <a href="login.html" class="login-btn">Вход</a>
+        </nav>
+    </header>
+
+    <section class="content">
+        <h1>Выберите карту</h1>
+        <p>Оформите карту или создайте свой дизайн.</p>
+
+        <!-- Предложенные карты -->
+        <div class="card-options">
+            <div class="card-template standard" onclick="selectPreset('standard')">
+                <p>Стандартная карта</p>
+            </div>
+            <div class="card-template premium" onclick="selectPreset('premium')">
+                <p>Премиум карта</p>
+            </div>
+        </div>
+
+        <!-- Кастомизация карты -->
+        <h2>Создайте свой дизайн</h2>
+        <div class="custom-card">
+            <div id="customCard" class="card-preview">
+                <p id="cardText">Моя карта</p>
+                <img id="cardImage" class="card-image" src="" alt="">
+            </div>
+            <input type="color" id="cardColor" value="#00FF66" onchange="changeColor()">
+            <input type="color" id="textColor" value="#FFFFFF" onchange="changeTextColor()">
+            <input type="text" id="cardInput" placeholder="Введите текст" oninput="changeText()">
+            <input type="file" id="imageUpload" accept="image/*" onchange="uploadImage()">
+        </div>
+
+        <input type="email" id="emailInput" placeholder="Введите ваш email">
+        <button onclick="saveCard()">Сохранить дизайн</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
